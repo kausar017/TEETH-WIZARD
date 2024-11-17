@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "treatment_name": "Teeth Whitening",
+        "treatment_description": "Get a brighter smile with our advanced teeth whitening treatment.",
+        "image": "https://i.postimg.cc/8kyDNY3Q/10cd27c0a0e5df8ceb4767f4a0e47019-best-teeth-whitening-1080-c-90-jpg-optimal.jpg",
+        "cost": "$120",
+        "details_page": "/services/teeth-whitening"
+    },
+    {
+        "id": 2,
+        "treatment_name": "Root Canal Therapy",
+        "treatment_description": "Effective solution to save your teeth from severe damage.",
+        "image": "https://i.postimg.cc/Pr9j8wTS/Common-Misconceptions.png",
+        "cost": "$200",
+        "details_page": "/services/root-canal"
+    },
+    {
+        "id": 3,
+        "treatment_name": "Dental Implants",
+        "treatment_description": "Permanent solution for missing teeth with natural look and feel.",
+        "image": "https://i.postimg.cc/2SW-fdS5r/hallstead-dental-implant-1200x675.webp",
+        "cost": "$1500",
+        "details_page": "/services/dental-implants"
+    },
+    {
+        "id": 4,
+        "treatment_name": "Braces & Aligners",
+        "treatment_description": "Straighten your teeth with our modern braces and aligners.",
+        "image": "https://i.postimg.cc/8CBQ3XWY/metal-braces.jpg",
+        "cost": "$800",
+        "details_page": "/services/braces-aligners"
+    }
+]
