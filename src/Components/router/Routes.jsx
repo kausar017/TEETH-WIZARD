@@ -8,6 +8,8 @@ import Treatments from "../pagase/Treatments/Treatments";
 import Profile from "../pagase/Profile/Profile";
 import MyAppointments from "../pagase/MyAppointments/MyAppointments";
 import Ditals from "../pagase/ditals/Ditals";
+import Login from "../login/Login";
+import Register from "../register/Register";
 
 
 
@@ -56,6 +58,14 @@ const Routes = createBrowserRouter([
                     return singleData;
 
                 }
+            },
+            {
+                path: '/login',
+                element: <Login></Login>
+            },
+            {
+                path: '/register',
+                element: <Register></Register>
             }
         ]
     },

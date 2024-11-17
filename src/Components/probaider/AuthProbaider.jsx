@@ -1,12 +1,13 @@
-import { createContext } from "react";
+import { createContext, useEffect, useState } from "react";
 import auth from "../../Firebase/Firebsae.Init";
-import { createUserWithEmailAndPassword, GithubAuthProvider, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 
 
 export const authContext = createContext();
 
 const AuthProbaider = ({ children }) => {
     console.log(children);
+    const [user, setuser] = useState(null)
 
     const handalRegister = (email, password) => {
         createUserWithEmailAndPassword(auth, email, password)
@@ -43,19 +44,28 @@ const AuthProbaider = ({ children }) => {
     const handalLogout = () => {
         signOut(auth)
     }
+    useEffect(() => {
+        const unsubscrive = onAuthStateChanged(auth, (currentUser) => {
+            setuser(currentUser)
+            console.log(currentUser);
+        })
+        return () => {
+            unsubscrive
+        }
+    }, []);
 
-
-    const authdata = {
+    const authInfo = {
         handalRegister,
         handalLogin,
         handalLogout,
         handalGoogleLogin,
-        handalGitbutLogin
+        handalGitbutLogin,
+        user
     }
 
     return (
         <div>
-            <authContext.Provider value={authdata}>
+            <authContext.Provider value={authInfo}>
                 {children}
             </authContext.Provider>
         </div>
